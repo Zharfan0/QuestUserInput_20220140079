@@ -1,0 +1,18 @@
+package com.example.pam_userinput
+
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
+
+@Composable
+fun FormDataDiri(modifier: Modifier
+) {
+//variabel2 untuk mengingat nilai masukan dari keyboard
+    var textNama by remember { mutableStateOf("")}
+    var textAlamat by remember {mutableStateOf("")}
+    var textJK by remember {mutableStateOf("")}
+
+    //variabel2 untuk menyimpan data yang diperoleh dari komponen UI
+    var nama by remember {mutableStateOf("")}
+}
