@@ -53,45 +53,48 @@ fun FormDataDiri(modifier: Modifier
     var jenis by remember {mutableStateOf("")}
 
     val gender:List<String> = listOf("Laki-laki", "Perempuan")
-
+    val status:List<String> = listOf("Janda", "Lajang", "Duda")
 
     Column (modifier = Modifier
-        .padding(top = 10.dp)
         .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
         )
     {
         Card (modifier = Modifier
-            .fillMaxWidth(1f)
-            .padding(12.dp),
+            .fillMaxWidth(),
             colors = CardDefaults.cardColors(
                 containerColor = Color.Gray
             )){
             Row () {
-                Spacer(modifier = Modifier.width(15.dp))
                 Column {
                     Text(
                         text = stringResource(R.string.judul),
                         fontSize = 30.sp,
                         fontWeight = FontWeight.Bold,
                         color = Color.White,
-                        modifier = Modifier.padding(top = 30.dp)
+                        modifier = Modifier.padding(top = 50.dp, bottom = 10.dp, start = 10.dp)
                     )
                 }
             }
         }
     }
 
-    Card (modifier = Modifier
-        .fillMaxWidth(1f)
-        .padding(12.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = Color.Gray
-        )) {  }
+
+    Column {
+        Card (modifier = Modifier
+            .fillMaxWidth(1f)
+            .padding(12.dp),
+            colors = CardDefaults.cardColors(
+                containerColor = Color.Gray
+            )) {
+
+        }
+    }
 
     Column (modifier = Modifier.padding(top = 100.dp),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally){
+        Text(text = "NAMA LENGKAP")
         OutlinedTextField(
             value = textNama,
             singleLine = true,
@@ -103,6 +106,23 @@ fun FormDataDiri(modifier: Modifier
             }
         )
         Row {
+            Text(text = "JENIS KELAMIN")
+            gender.forEach { item ->
+                Row(modifier = Modifier.selectable(
+                    selected = textJK == item,
+                    onClick = {textJK = item}
+                ), verticalAlignment = Alignment.CenterVertically){
+                    RadioButton(
+                        selected = textJK == item,
+                        onClick = {
+                            textJK = item
+                        })
+                    Text(item)
+                }
+            }
+        }
+        Row {
+            Text(text = "STATUS PERKAWINAN")
             gender.forEach { item ->
                 Row(modifier = Modifier.selectable(
                     selected = textJK == item,
