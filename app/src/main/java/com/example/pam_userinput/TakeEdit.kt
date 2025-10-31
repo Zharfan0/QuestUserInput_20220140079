@@ -123,7 +123,7 @@ fun FormDataDiri(modifier: Modifier
         }
         Row {
             Text(text = "STATUS PERKAWINAN")
-            gender.forEach { item ->
+            status.forEach { item ->
                 Row(modifier = Modifier.selectable(
                     selected = textJK == item,
                     onClick = {textJK = item}
