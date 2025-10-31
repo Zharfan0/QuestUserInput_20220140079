@@ -84,7 +84,7 @@ fun FormDataDiri(modifier: Modifier
     Column {
         Card (modifier = Modifier
             .fillMaxWidth(1f)
-            .padding(12.dp),
+            .padding(12.dp, top = 200.dp),
             colors = CardDefaults.cardColors(
                 containerColor = Color.Gray
             )) {
@@ -94,7 +94,8 @@ fun FormDataDiri(modifier: Modifier
 
     Column (modifier = Modifier.padding(top = 100.dp),
         verticalArrangement = Arrangement.Top,
-        horizontalAlignment = Alignment.CenterHorizontally){
+        horizontalAlignment = Alignment.Start,
+        ){
         Text(text = "NAMA LENGKAP")
         OutlinedTextField(
             value = textNama,
@@ -125,8 +126,8 @@ fun FormDataDiri(modifier: Modifier
         }
 
         Column {
-            Text(text = "JENIS KELAMIN")
-            gender.forEach { item ->
+            Text(text = "STATUS PERKAWINAN")
+            kawin.forEach { item ->
                 Row(modifier = Modifier.selectable(
                     selected = textJK == item,
                     onClick = {textJK = item}
@@ -141,6 +142,7 @@ fun FormDataDiri(modifier: Modifier
             }
         }
 
+        Text(text = "STATUS PERKAWINAN")
         OutlinedTextField(
             value = textAlamat,
             singleLine = true,
