@@ -53,7 +53,8 @@ fun FormDataDiri(modifier: Modifier
     var jenis by remember {mutableStateOf("")}
 
     val gender:List<String> = listOf("Laki-laki", "Perempuan")
-    val status:List<String> = listOf("Janda", "Lajang", "Duda")
+    val kawin:List<String> = listOf("Janda", "Lajang", "Perempuan")
+
 
     Column (modifier = Modifier
         .fillMaxSize(),
@@ -105,7 +106,8 @@ fun FormDataDiri(modifier: Modifier
                 textNama = it
             }
         )
-        Row {
+
+        Column {
             Text(text = "JENIS KELAMIN")
             gender.forEach { item ->
                 Row(modifier = Modifier.selectable(
@@ -121,9 +123,10 @@ fun FormDataDiri(modifier: Modifier
                 }
             }
         }
-        Row {
-            Text(text = "STATUS PERKAWINAN")
-            status.forEach { item ->
+
+        Column {
+            Text(text = "JENIS KELAMIN")
+            gender.forEach { item ->
                 Row(modifier = Modifier.selectable(
                     selected = textJK == item,
                     onClick = {textJK = item}
@@ -137,6 +140,7 @@ fun FormDataDiri(modifier: Modifier
                 }
             }
         }
+
         OutlinedTextField(
             value = textAlamat,
             singleLine = true,
