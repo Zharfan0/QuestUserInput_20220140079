@@ -82,9 +82,9 @@ fun FormDataDiri(modifier: Modifier
 
 
     Column {
-        Card (modifier = Modifier
+        ElevatedCard (modifier = Modifier
             .fillMaxWidth(1f)
-            .padding(12.dp, top = 200.dp),
+            .padding(12.dp, top = 100.dp, end = 12.dp),
             colors = CardDefaults.cardColors(
                 containerColor = Color.Gray
             )) {
