@@ -163,6 +163,7 @@ fun FormDataDiri(modifier: Modifier
                     nama = textNama
                     jenis = textJK
                     alamat = textAlamat
+                    kawin = textKawin
                 }
             )
             {
@@ -186,7 +187,7 @@ fun FormDataDiri(modifier: Modifier
             colors = CardDefaults.cardColors(containerColor = Color.Black),
             modifier = Modifier
                 .height(180.dp)
-                .width(300.dp),
+                .width(350.dp),
         ) {
 
             Row (modifier = Modifier
