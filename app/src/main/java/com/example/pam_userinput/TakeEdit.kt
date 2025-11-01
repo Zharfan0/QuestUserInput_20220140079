@@ -89,7 +89,7 @@ fun FormDataDiri(modifier: Modifier
                 containerColor = Color.Gray
             )) {
 
-    Column (modifier = Modifier.padding(top = 15.dp),
+    Column (modifier = Modifier.padding(top = 15.dp, start = 15.dp, end = 15.dp),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.Start,
         ){
