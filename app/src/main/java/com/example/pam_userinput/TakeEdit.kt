@@ -64,7 +64,7 @@ fun FormDataDiri(modifier: Modifier
         Card (modifier = Modifier
             .fillMaxWidth(),
             colors = CardDefaults.cardColors(
-                containerColor = Color.Gray
+                containerColor = Color.LightGray,
             )){
             Row () {
                 Column {
@@ -100,12 +100,13 @@ fun FormDataDiri(modifier: Modifier
             singleLine = true,
             shape = MaterialTheme.shapes.large,
             modifier = Modifier.width(250.dp),
-            label = {Text(text = "Nama Lengkap")},
+            label = {Text(text = "Isian Nama Lengkap")},
             onValueChange = {
                 textNama = it
             }
         )
 
+        Spacer(modifier= Modifier.height(15.dp))
         Column {
             Text(text = "JENIS KELAMIN")
             gender.forEach { item ->
@@ -122,7 +123,7 @@ fun FormDataDiri(modifier: Modifier
                 }
             }
         }
-
+        Spacer(modifier= Modifier.height(15.dp))
         Column {
             Text(text = "STATUS PERKAWINAN")
             kawin.forEach { item ->
@@ -140,7 +141,8 @@ fun FormDataDiri(modifier: Modifier
             }
         }
 
-        Text(text = "STATUS PERKAWINAN")
+        Spacer(modifier= Modifier.height(15.dp))
+        Text(text = "ALAMAT")
         OutlinedTextField(
             value = textAlamat,
             singleLine = true,
