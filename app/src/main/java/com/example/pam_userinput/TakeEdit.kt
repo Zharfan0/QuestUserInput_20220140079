@@ -46,14 +46,16 @@ fun FormDataDiri(modifier: Modifier
     var textNama by remember { mutableStateOf("")}
     var textAlamat by remember {mutableStateOf("")}
     var textJK by remember {mutableStateOf("")}
+    var textKawin by remember { mutableStateOf("") }
 
     //variabel2 untuk menyimpan data yang diperoleh dari komponen UI
     var nama by remember {mutableStateOf("")}
     var alamat by remember {mutableStateOf("")}
     var jenis by remember {mutableStateOf("")}
+    var kawin by remember { mutableStateOf("") }
 
     val gender:List<String> = listOf("Laki-laki", "Perempuan")
-    val kawin:List<String> = listOf("Janda", "Lajang", "Duda")
+    val kawinStats:List<String> = listOf("Janda", "Lajang", "Duda")
 
 
     Column (modifier = Modifier
@@ -126,15 +128,15 @@ fun FormDataDiri(modifier: Modifier
         Spacer(modifier= Modifier.height(15.dp))
         Column {
             Text(text = "STATUS PERKAWINAN")
-            kawin.forEach { item ->
+            kawinStats.forEach { item ->
                 Row(modifier = Modifier.selectable(
-                    selected = textJK == item,
-                    onClick = {textJK = item}
+                    selected = textKawin == item,
+                    onClick = {textKawin = item}
                 ), verticalAlignment = Alignment.CenterVertically){
                     RadioButton(
-                        selected = textJK == item,
+                        selected = textKawin == item,
                         onClick = {
-                            textJK = item
+                            textKawin = item
                         })
                     Text(item)
                 }
