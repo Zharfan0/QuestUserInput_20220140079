@@ -180,21 +180,30 @@ fun FormDataDiri(modifier: Modifier
             color = Color.DarkGray
         )
 
+        Column (horizontalAlignment = Alignment.CenterHorizontally) {
         ElevatedCard (
             elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
             colors = CardDefaults.cardColors(containerColor = Color.Black),
             modifier = Modifier
                 .height(180.dp)
-                .width(300.dp)
+                .width(300.dp),
         ) {
+
+            Row (modifier = Modifier
+                .padding(bottom = 5.dp, top = 5.dp)){
             Column (modifier = Modifier
-                .padding(horizontal = 5.dp, vertical = 15.dp),)
+                .padding(horizontal = 5.dp),)
             {
                 Text(text = "Nama   : "+nama, color = Color.White)
                 Text(text = "Gender : "+jenis, color = Color.White)
+            }
+            Column (modifier = Modifier
+                .padding(horizontal = 5.dp),){
                 Text(text = "Status : "+kawin, color = Color.White)
                 Text(text = "Alamat : "+alamat, color = Color.White)
             }
-        }
+            }
+
+        }}
     }
 }
