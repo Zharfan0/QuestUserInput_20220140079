@@ -53,7 +53,7 @@ fun FormDataDiri(modifier: Modifier
     var jenis by remember {mutableStateOf("")}
 
     val gender:List<String> = listOf("Laki-laki", "Perempuan")
-    val kawin:List<String> = listOf("Janda", "Lajang", "Perempuan")
+    val kawin:List<String> = listOf("Janda", "Lajang", "Duda")
 
 
     Column (modifier = Modifier
@@ -149,7 +149,7 @@ fun FormDataDiri(modifier: Modifier
                 textAlamat = it
             }
         )
-
+        Spacer(modifier= Modifier.height(20.dp))
             Button(
                 modifier = Modifier.fillMaxWidth(1f),
                 // the buttton is enabled when the user make a selection
@@ -159,7 +159,8 @@ fun FormDataDiri(modifier: Modifier
                     jenis = textJK
                     alamat = textAlamat
                 }
-            ) {
+            )
+            {
                 Text(stringResource(R.string.submit))
             }
     } }
