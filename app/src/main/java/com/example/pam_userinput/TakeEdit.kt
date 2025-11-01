@@ -73,7 +73,7 @@ fun FormDataDiri(modifier: Modifier
                         fontSize = 30.sp,
                         fontWeight = FontWeight.Bold,
                         color = Color.White,
-                        modifier = Modifier.padding(top = 50.dp, bottom = 10.dp, start = 10.dp)
+                        modifier = Modifier.padding(top = 50.dp, bottom = 10.dp, start = 10.dp),
                     )
                 }
             }
@@ -88,9 +88,6 @@ fun FormDataDiri(modifier: Modifier
             colors = CardDefaults.cardColors(
                 containerColor = Color.Gray
             )) {
-
-        }
-    }
 
     Column (modifier = Modifier.padding(top = 100.dp),
         verticalArrangement = Arrangement.Top,
@@ -153,28 +150,19 @@ fun FormDataDiri(modifier: Modifier
             }
         )
 
-        HorizontalDivider(
-            modifier = Modifier.padding(
-                bottom = dimensionResource(R.dimen.padding_medium),
-                top = dimensionResource(
-                    id = R.dimen.padding_medium
-                )
-            ),
-            thickness = dimensionResource(R.dimen.divider_tipis),
-            color = Color.DarkGray
-        )
-        Button(
-            modifier = Modifier.fillMaxWidth(1f),
-            // the buttton is enabled when the user make a selection
-            enabled = textAlamat.isNotEmpty(),
-            onClick = {
-                nama = textNama
-                jenis = textJK
-                alamat = textAlamat
+            Button(
+                modifier = Modifier.fillMaxWidth(1f),
+                // the buttton is enabled when the user make a selection
+                enabled = textAlamat.isNotEmpty(),
+                onClick = {
+                    nama = textNama
+                    jenis = textJK
+                    alamat = textAlamat
+                }
+            ) {
+                Text(stringResource(R.string.submit))
             }
-        ) {
-            Text(stringResource(R.string.submit))
-        }
+    } }
 
         HorizontalDivider(
             modifier = Modifier
